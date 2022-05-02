@@ -1,15 +1,3 @@
-
-# Phonebook Directory
-#### *By: Xavier Agostino*
-
-> This is a Phonebook Directory hosted in the java console that adds, deletes, finds, displays, and updates contacts. Contact names are stored in hashmap along with a card which is a LinkedList holding contact information like address, name, number, and area code. The phone number is also stored in Trie.
-
-
-## Initialization
-
-* Initializes things in program and imports.
-
-```java
 //Normal Imports
 import java.util.*;
 import java.util.Scanner;
@@ -57,11 +45,8 @@ public class PhoneBook {
 		System.out.println("Show menu? (y/n): ");
 		String run = main.nextLine();
 
-```
-## Phonebook Class
-* Main menu where you select option you want to perform
-```java
-//------------------------------WELCOME HEADER----------------------------------//
+
+		//------------------------------WELCOME HEADER----------------------------------//
 
 		do {
 			System.out.println("+---------------------------------------+");
@@ -79,10 +64,8 @@ public class PhoneBook {
 			choice = option.nextLine();
 
 		//------------------------------------------------------------------------------//
-```
-* List of questions that are handled by switches.
-```java
-//-------------------------QUESTIONS---------------------------------------------//
+
+			//-------------------------QUESTIONS---------------------------------------------//
 
 			switch (choice)
 			{
@@ -627,9 +610,8 @@ public class PhoneBook {
 					//---------------------------------------------------------------------------------------//
 			}
 		} while (run.equals("y"));
-```
-* This is outside the main method and it has helper methods for helping display phonebook and list of contacts. Also it has methods to help save, delete, and updateFiles based on FileIO
-```java
+
+	} //ends main
 
 	//-------------------------SAVES RECORD OF CONTACT---------------------------------------------//
 
@@ -746,97 +728,5 @@ public class PhoneBook {
 
 	//----------------------------------------------------------------------------------------------------------//
 
-```
-## Card Class
-
-* The card class stores your name, number, address, areaCode, and location in Card. It has a toString to help display it like a contact card.
-
-```java
-
-import java.util.*;
-
-public class Card {
-
-	private String name;
-	private String number;
-	private String address;
-	private String areaCode;
-	private String location;
-
-	public Card(String name, String number, String address) {
-		this.name = name;
-		this.number = number;
-		this.address = address;
-	}
-
-	public Card(String name, String number, String address, String areaCode, String location) {
-		this(name, number, address);
-		this.areaCode = areaCode;
-		this.location = location;
-
-	}
-
-	public String cardDisplay() {
-		String toReturn = "\n----------------------------------";
-		toReturn += "\n\t" + name + "'s" + " Card";
-		toReturn += "\n----------------------------------\n";
-		toReturn += "\n" + " Area Code: " + areaCode;
-		toReturn += "\n" + " Location: " + location;
-		toReturn += "\n" + " Contact Name: " + name;
-		toReturn += "\n" + " Contact Number: " + number;
-		toReturn += "\n" + " Address: ";
-		toReturn += "\n" + "\t" + address;
-		toReturn += "\n----------------------------------";
-		toReturn += "\n\n----------------------------------";
-		return toReturn;
-
-	}
-
-	public String toString() {
-		String toReturn = "\n----------------------------------";
-		toReturn += "\n\t" + name + "'s" + " Card";
-		toReturn += "\n----------------------------------\n";
-		toReturn += "\n" + " Area Code: " + areaCode;
-		toReturn += "\n" + " Location: " + location;
-		toReturn += "\n" + " Contact Name: " + name;
-		toReturn += "\n" + " Contact Number: " + number;
-		toReturn += "\n" + " Address: ";
-		toReturn += "\n" + "\t" + address;
-		toReturn += "\n----------------------------------";
-		toReturn += "\n\n----------------------------------";
-		return toReturn;
-
-	}
-}
-
-```
-## Contact List Class
-
-* The contact list class just takes in your name and then it has a toString that helps show contact names.
-
-```java
-import java.util.*;
-
-public class ContactList {
-
-	private String name;
-
-	public ContactList (String name) {
-		this.name = name;
-	}
-
-	public String toString() {
-		String toReturn = "";
-		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-		for (int i = 0; i < alphabet.length();i++) {
-			char c = alphabet.charAt(i);
-			if (c == name.charAt(name.indexOf(" ") + 1)) {
-				toReturn += "\n+--------------------------------+" + "\n" + "|" + " " + name.charAt(name.indexOf(" ") + 1) + ":" + "                            |" + "\n" + "+--------------------------------+";
-				toReturn += "\n" + " " + name + " ";
-			}
-		}
-		return toReturn;
-	}
-}
-```
+}//end class
+class phonebookD {}
